@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Transaction</title>
+</head>
+<body>
+    
+    <div class="main"> 
+
+        <form class="main-form" action="{{ url_for("create_transaction") }}" method="post">
+            
+            <input type="token" id="token" name="token" placeholder="token" required>
+            <br>
+
+            <input type="number" id="amount" name="amount" placeholder="amount" required>
+            <br>
+
+            <input type="text" id="currency" name="currency" placeholder="currency" required>
+            <br>
+            <button type="submit">Greate Transaction</button>
+
+            <h4 class="errors">{{ error }}</h4>
+
+        <h2 class="token"></h2>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Token</title>
+</head>
+<body>
+    
+    <div class="main"> 
+
+        <form class="main-form" action="{{ url_for("create_token") }}" method="post">
+            
+            <input type="text" id="username" name="username" placeholder="username" required>
+            <br>
+
+            <input type="password" id="password" name="password" placeholder="password" required>
+            <br>
+            <button type="submit">Generate Token</button>
+        
+        <h4 class="errors">{{ error }}</h4>
+        <h4 class="token">{{ token }}</h4>
+    </div>
+  
+</body>
+</html>
