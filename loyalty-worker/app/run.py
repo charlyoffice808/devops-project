@@ -12,7 +12,7 @@ def record_transaction(*, user_id: int, amount: int, currency: str):
 
 
 if __name__ == '__main__':
-    redis_url: str = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/0')
+    redis_url: str = os.getenv('REDIS_URL', 'redis://169.10.0.10:6379/0')
 
     conn = StrictRedis.from_url(redis_url)
 

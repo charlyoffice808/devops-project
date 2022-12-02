@@ -1,7 +1,7 @@
 # Pick a low configuration python base image
 FROM python:3.10-slim-bullseye
 
-#  Expose the port 5000 of the docker container
+# #  Expose the port 5000 of the docker container
 EXPOSE 5000
 
 ENV JWT_SECRET=jwt_secret

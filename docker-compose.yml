@@ -1,0 +1,60 @@
+services:
+  redis: 
+    image: redislabs/redismod
+    networks:
+      network:
+        ipv4_address: 169.10.0.10
+  
+  redisinsight:
+    image: redislabs/redisinsight:latest
+    ports:
+      - '8001:8001'
+    networks:
+      network:
+        ipv4_address: 169.10.0.11
+
+  auth-app:
+    build:
+      context: ./auth-api/app
+      dockerfile: ./Dockerfile
+    networks:
+      network:
+        ipv4_address: 169.10.0.12
+
+  transaction-app:
+    build:
+      context: ./transaction-api/app
+      dockerfile: ./Dockerfile
+    depends_on:
+      - redis
+    networks:
+      network:
+        ipv4_address: 169.10.0.13
+
+  worker-app:
+    build:
+      context: ./loyalty-worker/app
+      dockerfile: ./Dockerfile
+    depends_on:
+      - redis
+    networks:
+      network:
+        ipv4_address: 169.10.0.14
+
+  router:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "3050:80"
+    networks:
+      network:
+        ipv4_address: 169.10.0.15
+
+networks:
+  network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 169.10.0.0/16
+         gateway: 169.10.0.1
