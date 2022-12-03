@@ -47,6 +47,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3050:80"
+    depends_on:
+      - auth-app
+      - transaction-app
     networks:
       network:
         ipv4_address: 169.10.0.15
