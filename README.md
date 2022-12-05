@@ -16,7 +16,7 @@ When all services are up and running: open any browser and type in these urls :
 2. http://localhost:3050/transaction - Use a token generated on step 1 to perform a transaction.
 
 3. http://localhost:8001/ - This is Redis Insight Container it provides an intuitive and efficient graphical interface for Redis, allowing you to interact with your databases and manage your data.
-- To login: select Connect to Redis DB using port and hostname - Hostaname is 169.10.0.10 and Port is 6379 and for DB choose anything.
+- To login: select Connect to Redis DB using port and hostname - Hostname is 169.10.0.10 and Port is 6379 and for DB choose anything.
 
 # The structure of the project
 
