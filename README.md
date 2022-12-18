@@ -26,8 +26,3 @@ When all services are up and running: open any browser and type in these urls :
 - When Redis IP was Dynamic it would affect Transaction API and Loyalty-Worker and RedisInsight whenever IP changes or re-build a container.
 - I used NGINX as a routing proxy to pass traffic to the correct microservice and to implement path-based routing.
 
-# Bug
-
-- When running containers for the first time, this error may appear and cause the NGINX container to stop: nginx: [emerg] host not found in upstream "transaction-app:5000" in /etc/nginx/conf.d/default.conf:9
-
-- Workaround: Delete the NGINX container and its image, then rebuild and restart all containers. This error should be resolved after a few tries; I'm not sure why it's happening.
