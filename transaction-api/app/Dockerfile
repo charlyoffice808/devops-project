@@ -1,5 +1,5 @@
 # # Pick a low configuration python base image
-FROM python:3.9-slim-bullseye
+FROM python:3.9-slim-buster
 
 # #  Expose the port 5000 of the docker container
 EXPOSE 5000
