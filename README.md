@@ -1,7 +1,5 @@
 # devops-interview-project-Final
 
-I solved my problems by adjusting packages and dependencies to suit this project.
-
 Requirements: Python 3.10+, Docker
 
 To get things started:
